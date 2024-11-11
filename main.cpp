@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#include <cmath>
 
 int main()
 {
@@ -13,12 +13,14 @@ int main()
 
 	D = pow(b, 2) - 4 * a * c;
 	if (D < 0) {
-		printf("No real roots");
+		printf("\nNo real roots\n");
 	} else {
 		x = -b / (2 * a);
-		if (fabs(D) < Eps) {
+		Eps = 0.001;
+		if (std::abs(D) < Eps) {
 			printf("Two equal roots:\n");
 			printf("x1 = x2 = %f", x);
+			exit(-1);
 		}
 		x2 = sqrt(D) / (2 * a);
 		x1 = x2 + x;
