@@ -3,7 +3,7 @@
 
 int main()
 {
-	float a, b, c, x, x1, x2, D;
+	float a, b, c, x, x1, x2, D, Eps;
 	printf("Input a = ");
 	scanf("%f", &a);
 	printf("\nInput b = ");
@@ -16,7 +16,7 @@ int main()
 		printf("No real roots");
 	} else {
 		x = -b / (2 * a);
-		if (D == 0) {
+		if (fabs(D) < Eps) {
 			printf("Two equal roots:\n");
 			printf("x1 = x2 = %f", x);
 		}
